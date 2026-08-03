@@ -70,14 +70,16 @@ export function HomePage() {
 
       <div
         id="work"
-        className="flex w-full flex-col items-center gap-16 px-20 pb-24 max-lg:px-6"
+        className="flex w-full flex-col items-center px-20 pb-24 max-lg:px-6"
       >
-        <div className="w-[1080px] max-w-full">
+        <div className="mb-8 w-[1080px] max-w-full">
           <SectionHeading title={site.workSectionHeading} />
         </div>
-        {publishedProjects.map((project) => (
-          <ProjectCard key={project.slug} project={project} />
-        ))}
+        <div className="flex w-full flex-col items-center gap-16">
+          {publishedProjects.map((project) => (
+            <ProjectCard key={project.slug} project={project} />
+          ))}
+        </div>
       </div>
 
       {comingSoonProjects.length > 0 && (
@@ -88,13 +90,13 @@ export function HomePage() {
               subtitle="Self-initiated project I'm working on next"
             />
           </div>
-          <div className="flex gap-6 max-lg:flex-col">
+          <div className="flex gap-10 max-lg:flex-col">
             {comingSoonProjects.map((project) => (
               <div
                 key={project.slug}
-                className="flex flex-1 gap-6 rounded-2xl border border-[rgba(229,229,232,0.7)] bg-white/40 p-6"
+                className="flex flex-1 items-start gap-6"
               >
-                <div className="flex flex-1 flex-col gap-2">
+                <div className="flex flex-1 flex-col gap-2 self-start">
                   <p className="font-main text-sm text-[#4a5463]">
                     In development
                   </p>
@@ -108,7 +110,7 @@ export function HomePage() {
                 <Media
                   src={project.cover}
                   alt={project.title}
-                  className="h-[360px] flex-1 rounded-2xl max-lg:h-[220px]"
+                  className="h-[280px] flex-1 shrink-0 self-start rounded-2xl max-lg:h-[220px]"
                 />
               </div>
             ))}
@@ -135,7 +137,7 @@ export function HomePage() {
             </p>
           ))}
 
-          <div className="mt-4 flex flex-wrap items-center gap-4">
+          <div className="mt-4 flex flex-wrap items-center justify-center gap-4">
             <a
               href={site.contact.linkedin || undefined}
               target="_blank"

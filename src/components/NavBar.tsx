@@ -135,7 +135,7 @@ export function NavBar() {
         type="button"
         onClick={goHome}
         aria-label="Home"
-        className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-white/40 bg-[rgba(185,185,185,0.1)] shadow-[0_4px_16px_rgba(0,0,0,0.08),inset_0_1px_0_rgba(255,255,255,0.5)] backdrop-blur-xl"
+        className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-white/40 bg-[rgba(185,185,185,0.1)] shadow-[0_4px_16px_rgba(0,0,0,0.08),inset_0_1px_0_rgba(255,255,255,0.5)] backdrop-blur-[3px]"
       >
         <img src={homeIcon} alt="" className="size-12" />
       </button>
@@ -152,7 +152,7 @@ export function NavBar() {
           onMouseMove={(e) => setHoverFraction(fractionFromEvent(e))}
           onMouseLeave={() => setHoverFraction(null)}
           onClick={(e) => seekTo(fractionFromEvent(e))}
-          className="relative h-12 w-full cursor-pointer overflow-hidden rounded-full border border-white/40 bg-[rgba(185,185,185,0.1)] shadow-[0_4px_16px_rgba(0,0,0,0.08),inset_0_1px_0_rgba(255,255,255,0.5)] backdrop-blur-xl"
+          className="relative h-12 w-full cursor-pointer overflow-hidden rounded-full border border-white/40 bg-[rgba(185,185,185,0.1)] shadow-[0_4px_16px_rgba(0,0,0,0.08),inset_0_1px_0_rgba(255,255,255,0.5)] backdrop-blur-[3px]"
         >
           <div
             className="absolute inset-y-0 left-0 bg-[rgba(255,255,255,0.7)]"

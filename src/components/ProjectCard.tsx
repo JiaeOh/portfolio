@@ -8,7 +8,7 @@ export function ProjectCard({ project }: { project: Project }) {
     <div
       data-nav-section
       data-nav-label={`${project.category} — ${project.navLabel}`}
-      className="w-[1080px] max-w-full rounded-3xl border border-[rgba(229,229,232,0.7)] bg-white/60 p-8 shadow-[0px_7px_24px_4px_rgba(0,0,0,0.03)] transition-[transform,box-shadow] duration-300 ease-out hover:-translate-y-1.5 hover:shadow-[0px_24px_48px_-8px_rgba(0,0,0,0.12)] max-lg:p-6"
+      className="w-[1080px] max-w-full rounded-3xl border border-[rgba(229,229,232,0.7)] bg-white/60 p-8 shadow-[0px_7px_24px_4px_rgba(0,0,0,0.03)] transition-[transform,box-shadow] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-1 hover:shadow-[0px_28px_56px_-12px_rgba(0,0,0,0.14)] max-lg:p-6"
     >
       <div className="flex items-start justify-between gap-4">
         <p className="font-main text-sm text-gray-600">
