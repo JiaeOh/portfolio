@@ -8,11 +8,13 @@ export function WorkDetailPage() {
   const { slug } = useParams<{ slug: string }>();
   const project = slug ? getProjectBySlug(slug) : undefined;
 
-  if (!project) {
+  if (!project || project.badge === "In progress") {
     return (
       <div className="flex w-full flex-col items-center gap-4 px-6 py-32 text-center">
         <p className="font-main text-lg text-gray-600">
-          That case study doesn't exist.
+          {project
+            ? "This case study isn't published yet."
+            : "That case study doesn't exist."}
         </p>
         <Link
           to="/"

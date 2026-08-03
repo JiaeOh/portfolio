@@ -4,6 +4,9 @@ import { ProjectCard } from "../components/ProjectCard";
 import { Media } from "../components/Media";
 import { projects, site } from "../lib/content";
 
+const publishedProjects = projects.filter((p) => p.badge !== "In progress");
+const comingSoonProjects = projects.filter((p) => p.badge === "In progress");
+
 export function HomePage() {
   return (
     <>
@@ -13,10 +16,36 @@ export function HomePage() {
         id="work"
         className="flex w-[1280px] max-w-full flex-col items-center gap-16 px-6 pb-24"
       >
-        {projects.map((project) => (
+        {publishedProjects.map((project) => (
           <ProjectCard key={project.slug} project={project} />
         ))}
       </div>
+
+      {comingSoonProjects.length > 0 && (
+        <div className="mx-auto flex w-[1280px] max-w-full flex-col gap-6 px-6 pb-24">
+          <h2 className="font-main text-lg font-semibold text-gray-600">
+            Coming soon
+          </h2>
+          <div className="grid grid-cols-2 gap-6 max-lg:grid-cols-1">
+            {comingSoonProjects.map((project) => (
+              <div
+                key={project.slug}
+                className="flex flex-col gap-2 rounded-2xl border border-gray-200/70 bg-white/40 p-6"
+              >
+                <p className="font-main text-sm text-gray-600">
+                  {project.category}
+                </p>
+                <p className="font-main text-lg font-semibold text-[color:var(--color-text-primary)]">
+                  In development
+                </p>
+                <p className="font-main text-sm leading-[1.6] text-[#4a5565]">
+                  {project.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
 
       <div
         id="selected-work"
