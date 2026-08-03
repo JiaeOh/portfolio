@@ -3,14 +3,19 @@
 /* Sulphur Point — logo mark ("ae") */
 @import url("https://fonts.googleapis.com/css2?family=Sulphur+Point:wght@700&display=swap");
 
-/* Manrope — body/UI type. Matches the Figma file exactly: Figma can't load
-   Switzer/Ranade (Fontshare fonts aren't in its catalog), so Manrope was
-   used there as the closest match, then hand-tuned. Switching the live
-   site to the same family removes any design/build mismatch. */
-@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400..800&display=swap");
+/* Switzer & Ranade — the site's real body/UI type, via Fontshare. These
+   load fine in the browser. Figma is the one place they don't work
+   (Fontshare fonts aren't in Figma's font catalog), so the Figma file
+   shows Manrope as a stand-in there ONLY — that substitution should
+   never have been carried over into this file. If you have licensed
+   Switzer/Ranade font files installed locally, Figma's font picker
+   will pick them up from your system and this gap closes entirely. */
+@import url("https://api.fontshare.com/v2/css?f[]=switzer@400,500,600,700&f[]=ranade@400&display=swap");
 
-/* PP Hatton is a paid font; Fraunces stands in as the closest freely
-   licensed serif for the "Jiae Oh" Hero headline. */
+/* PP Hatton is a paid font — no license/font file available here, so
+   Fraunces stands in as the closest freely licensed serif for the
+   "Jiae Oh" Hero headline. Same fix as above: install the licensed
+   PP Hatton file locally and Figma will use the real thing. */
 @import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&display=swap");
 
 /* Red Hat Display — the Design Goal section's heading + body only. */
@@ -19,8 +24,8 @@
 @theme {
   --font-logo: "Sulphur Point", sans-serif;
   --font-display: "Fraunces", serif;
-  --font-main: "Manrope", sans-serif;
-  --font-accent: "Manrope", sans-serif;
+  --font-main: "Switzer", sans-serif;
+  --font-accent: "Ranade", sans-serif;
   --font-goal: "Red Hat Display", sans-serif;
 
   --color-text-primary: #000000;

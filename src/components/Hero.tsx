@@ -24,9 +24,6 @@ export function Hero() {
             {site.pronunciation}
           </span>
         </p>
-        <p className="font-main text-[18px] text-gray-600">
-          {site.role} — {site.location}
-        </p>
       </div>
 
       <p className="max-w-[720px] font-main text-[32px] font-semibold leading-[1.4] text-[color:var(--color-text-primary)] max-lg:text-[24px]">
