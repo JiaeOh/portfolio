@@ -32,7 +32,7 @@ export function Hero() {
       data-nav-section
       data-nav-label="Home"
       ref={heroRef}
-      className="relative flex w-full flex-col items-start gap-16 p-20 max-lg:gap-10 max-lg:px-6 max-lg:pt-24 max-lg:pb-8"
+      className="relative flex w-full flex-col items-start gap-16 px-20 pt-40 pb-20 max-lg:gap-10 max-lg:px-6 max-lg:pt-24 max-lg:pb-8"
     >
       {glowOrigin && (
         <div

@@ -17,7 +17,6 @@ function getScrollMax() {
 }
 
 function routeFallbackLabel(pathname: string) {
-  if (pathname === "/how-i-work") return "How I Work";
   if (pathname === "/about") return "About";
   const workMatch = pathname.match(/^\/work\/(.+)$/);
   if (workMatch) {

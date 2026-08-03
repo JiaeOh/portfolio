@@ -81,7 +81,7 @@ export function HomePage() {
       </div>
 
       {comingSoonProjects.length > 0 && (
-        <div className="mx-auto flex w-full flex-col items-start gap-6 px-20 pb-24 max-lg:px-6">
+        <div className="mx-auto flex w-full flex-col items-center gap-6 px-20 pb-24 max-lg:px-6">
           <div className="w-[1080px] max-w-full">
             <SectionHeading
               title="Coming Soon"
@@ -120,54 +120,48 @@ export function HomePage() {
         id="about"
         data-nav-section
         data-nav-label="About"
-        className="mx-auto flex w-full flex-col gap-6 border-t border-[#e5e5e8] px-20 py-16 max-lg:px-6"
+        className="flex w-full flex-col items-center border-t border-[#e5e5e8] px-20 py-16 max-lg:px-6"
       >
-        <h2 className="font-main text-2xl font-semibold text-[color:var(--color-text-primary)]">
-          {site.about.heading}
-        </h2>
-        {site.about.body.slice(0, 2).map((paragraph) => (
-          <p
-            key={paragraph}
-            className="max-w-[720px] font-main text-base leading-[1.7] text-[#4a5463]"
-          >
-            {paragraph}
-          </p>
-        ))}
+        <div className="flex w-[1080px] max-w-full flex-col gap-6">
+          <h2 className="font-main text-2xl font-semibold text-[color:var(--color-text-primary)]">
+            {site.about.heading}
+          </h2>
+          {site.about.body.slice(0, 2).map((paragraph) => (
+            <p
+              key={paragraph}
+              className="max-w-[720px] font-main text-base leading-[1.7] text-[#4a5463]"
+            >
+              {paragraph}
+            </p>
+          ))}
 
-        <div className="mt-4 flex flex-wrap items-center gap-4">
-          <a
-            href={site.contact.linkedin || undefined}
-            target="_blank"
-            rel="noreferrer"
-            aria-disabled={!site.contact.linkedin}
-            className="flex items-center gap-2 rounded-full bg-black px-5 py-2.5 font-main text-sm text-white transition-opacity hover:opacity-80 aria-disabled:pointer-events-none aria-disabled:opacity-40"
-          >
-            <LinkedInIcon />
-            LinkedIn
-          </a>
-          <a
-            href={`mailto:${site.contact.email}`}
-            className="flex items-center gap-2 rounded-full bg-black px-5 py-2.5 font-main text-sm text-white transition-opacity hover:opacity-80"
-          >
-            <MailIcon />
-            {site.contact.email}
-          </a>
-          <Link
-            to="/cv"
-            className="flex items-center gap-2 rounded-full bg-black px-5 py-2.5 font-main text-sm text-white transition-opacity hover:opacity-80"
-          >
-            <FileTextIcon />
-            Read CV
-          </Link>
+          <div className="mt-4 flex flex-wrap items-center gap-4">
+            <a
+              href={site.contact.linkedin || undefined}
+              target="_blank"
+              rel="noreferrer"
+              aria-disabled={!site.contact.linkedin}
+              className="flex items-center gap-2 rounded-full bg-black px-5 py-2.5 font-main text-sm text-white transition-opacity hover:opacity-80 aria-disabled:pointer-events-none aria-disabled:opacity-40"
+            >
+              <LinkedInIcon />
+              LinkedIn
+            </a>
+            <a
+              href={`mailto:${site.contact.email}`}
+              className="flex items-center gap-2 rounded-full bg-black px-5 py-2.5 font-main text-sm text-white transition-opacity hover:opacity-80"
+            >
+              <MailIcon />
+              {site.contact.email}
+            </a>
+            <Link
+              to="/cv"
+              className="flex items-center gap-2 rounded-full bg-black px-5 py-2.5 font-main text-sm text-white transition-opacity hover:opacity-80"
+            >
+              <FileTextIcon />
+              Read CV
+            </Link>
+          </div>
         </div>
-        <p className="font-main text-sm text-gray-600">{site.contact.cta}</p>
-
-        <Link
-          to="/how-i-work"
-          className="font-main text-sm text-[color:var(--color-blue)] hover:underline"
-        >
-          How I work →
-        </Link>
       </footer>
     </>
   );
