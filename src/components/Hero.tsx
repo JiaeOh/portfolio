@@ -64,7 +64,8 @@ export function Hero() {
       </div>
 
       <p className="max-w-[640px] font-main text-[16px] leading-[1.7] text-[#4a5463]">
-        {site.intro}{" "}
+        {site.intro}
+        <br />
         <span className="font-bold">{site.introHighlight}</span>
       </p>
 

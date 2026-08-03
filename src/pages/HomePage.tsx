@@ -90,7 +90,7 @@ export function HomePage() {
               subtitle="Self-initiated project I'm working on next"
             />
           </div>
-          <div className="flex gap-10 max-lg:flex-col">
+          <div className="flex w-[1080px] max-w-full gap-10 max-lg:flex-col">
             {comingSoonProjects.map((project) => (
               <div
                 key={project.slug}
