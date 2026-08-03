@@ -18,6 +18,10 @@
 
   --color-text-primary: #000000;
   --color-orange: #f77111;
+  /* Darker variant for text-on-light-background use — #f77111 as text
+     fails WCAG AA (2.87:1); this passes at ~5.3:1. Background/fill uses
+     (badges, the nav progress bar) keep the brighter --color-orange. */
+  --color-orange-text: #b34d09;
   --color-blue: #1f75ff;
   --color-blue-15: rgba(31, 117, 255, 0.15);
 }

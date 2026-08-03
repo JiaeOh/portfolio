@@ -1,6 +1,14 @@
-import { useCallback, useEffect, useRef, useState, type MouseEvent } from "react";
+import {
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+  type MouseEvent,
+} from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import homeIcon from "../assets/icons/home-icon.svg";
 import { MarqueeText } from "./MarqueeText";
+import { getProjectBySlug } from "../lib/content";
 
 type Section = { label: string; top: number; bottom: number };
 
@@ -8,8 +16,21 @@ function getScrollMax() {
   return document.documentElement.scrollHeight - window.innerHeight;
 }
 
+function routeFallbackLabel(pathname: string) {
+  if (pathname === "/how-i-work") return "How I Work";
+  if (pathname === "/about") return "About";
+  const workMatch = pathname.match(/^\/work\/(.+)$/);
+  if (workMatch) {
+    const project = getProjectBySlug(workMatch[1]);
+    if (project) return `${project.category} — ${project.navLabel}`;
+  }
+  return "Home";
+}
+
 export function NavBar() {
   const barRef = useRef<HTMLDivElement>(null);
+  const location = useLocation();
+  const navigate = useNavigate();
   const [scrollFraction, setScrollFraction] = useState(0);
   const [hoverFraction, setHoverFraction] = useState<number | null>(null);
   const [sections, setSections] = useState<Section[]>([]);
@@ -18,7 +39,9 @@ export function NavBar() {
     const els = Array.from(
       document.querySelectorAll<HTMLElement>("[data-nav-section]"),
     );
-    const tops = els.map((el) => el.getBoundingClientRect().top + window.scrollY);
+    const tops = els.map(
+      (el) => el.getBoundingClientRect().top + window.scrollY,
+    );
     const docBottom = document.documentElement.scrollHeight;
     setSections(
       els.map((el, i) => ({
@@ -29,6 +52,7 @@ export function NavBar() {
     );
   }, []);
 
+  // Recompute on route change too — different pages have different (or no) sections.
   useEffect(() => {
     computeSections();
     window.addEventListener("resize", computeSections);
@@ -39,32 +63,35 @@ export function NavBar() {
       window.removeEventListener("load", computeSections);
       clearTimeout(settleTimer);
     };
-  }, [computeSections]);
+  }, [computeSections, location.pathname]);
 
   useEffect(() => {
     const onScroll = () => {
       const max = getScrollMax();
-      setScrollFraction(max > 0 ? Math.min(1, Math.max(0, window.scrollY / max)) : 0);
+      setScrollFraction(
+        max > 0 ? Math.min(1, Math.max(0, window.scrollY / max)) : 0,
+      );
     };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  }, [location.pathname]);
 
   const labelForFraction = useCallback(
     (frac: number) => {
-      if (sections.length === 0) return "Home";
+      if (sections.length === 0) return routeFallbackLabel(location.pathname);
       const y = frac * getScrollMax() + window.innerHeight / 2;
       return (
         sections.find((s) => y >= s.top && y < s.bottom)?.label ??
         sections[sections.length - 1].label
       );
     },
-    [sections],
+    [sections, location.pathname],
   );
 
   const activeLabel = labelForFraction(scrollFraction);
-  const previewLabel = hoverFraction != null ? labelForFraction(hoverFraction) : null;
+  const previewLabel =
+    hoverFraction != null ? labelForFraction(hoverFraction) : null;
 
   const fractionFromEvent = (e: MouseEvent) => {
     const rect = barRef.current!.getBoundingClientRect();
@@ -75,6 +102,14 @@ export function NavBar() {
     window.scrollTo({ top: frac * getScrollMax(), behavior: "smooth" });
   };
 
+  const goHome = () => {
+    if (location.pathname === "/") {
+      document.getElementById("home")?.scrollIntoView({ behavior: "smooth" });
+    } else {
+      navigate("/");
+    }
+  };
+
   const fillPercent = scrollFraction * 100;
   const tooltipLeft = Math.min(92, Math.max(8, (hoverFraction ?? 0) * 100));
 
@@ -82,7 +117,7 @@ export function NavBar() {
     <div className="fixed top-6 left-1/2 z-50 flex h-12 -translate-x-1/2 items-center gap-2">
       <button
         type="button"
-        onClick={() => document.getElementById("home")?.scrollIntoView({ behavior: "smooth" })}
+        onClick={goHome}
         aria-label="Home"
         className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-white/15 bg-black/35 backdrop-blur-xl shadow-[inset_0_1px_0_0_rgba(255,255,255,0.15),0px_4px_16px_0px_rgba(0,0,0,0.1)]"
       >
@@ -124,7 +159,7 @@ export function NavBar() {
 
         {previewLabel && (
           <div
-            className="pointer-events-none absolute top-full mt-2 -translate-x-1/2 whitespace-nowrap rounded-lg bg-[rgba(1,1,1,0.9)] px-3 py-1.5 font-main text-xs text-white"
+            className="pointer-events-none absolute top-full mt-2 -translate-x-1/2 rounded-lg bg-[rgba(1,1,1,0.9)] px-3 py-1.5 font-main text-xs whitespace-nowrap text-white"
             style={{ left: `${tooltipLeft}%` }}
           >
             {previewLabel}

@@ -1,0 +1,148 @@
+{
+  "name": "Jiae Oh",
+  "pronunciation": "Jee-ay",
+  "role": "Product Designer",
+  "location": "Manchester, UK",
+  "tagline": "I find problems before being asked, and carry them through to shipped, measured results.",
+  "intro": "Product Designer working across fintech, enterprise data and B2B products. I design from evidence rather than opinion, and I build hands-on — currently designing and shipping a hospitality operations app end to end.",
+  "nav": [
+    {
+      "label": "Work",
+      "href": "/#work"
+    },
+    {
+      "label": "How I work",
+      "href": "/how-i-work"
+    },
+    {
+      "label": "About",
+      "href": "/about"
+    },
+    {
+      "label": "CV",
+      "href": "/JiaeOh_CV.pdf"
+    }
+  ],
+  "about": {
+    "heading": "About",
+    "body": [
+      "I'm a product designer based in Manchester. My work spans fintech, enterprise data platforms and B2B operational software — the kind of products people use all day, under time pressure, to get real work done.",
+      "I design from evidence. I'm ADsP certified in data analytics, and I'd rather read the session data and talk to users on shift than argue from taste. At a crypto exchange I found that low signups were a trust problem, not a button problem, and the redesign that followed moved conversion from 4% to 25%.",
+      "I also build. I work hands-on with Claude Code, Cursor and Figma MCP, and I document design systems so developers can pick them up and run. Right now I'm designing and shipping a hospitality operations app end to end with a remote developer.",
+      "Before the UK, I studied Communication Design in Seoul and worked across enterprise dashboards, fintech and operational systems."
+    ]
+  },
+  "skills": [
+    {
+      "group": "Design",
+      "items": [
+        "End-to-end product design",
+        "UX/UI",
+        "Qualitative and secondary research",
+        "Usability testing",
+        "Information architecture",
+        "Design systems and tokens",
+        "Figma (Variables, Modes)",
+        "Accessibility (WCAG)"
+      ]
+    },
+    {
+      "group": "AI and prototyping",
+      "items": [
+        "Claude Code",
+        "Cursor",
+        "Figma MCP",
+        "Google Stitch",
+        "Prompt engineering",
+        "AI-assisted design systems",
+        "design.md documentation"
+      ]
+    },
+    {
+      "group": "Data",
+      "items": [
+        "ADsP certified",
+        "Google Analytics",
+        "Tableau",
+        "Python and R"
+      ]
+    }
+  ],
+  "contact": {
+    "email": "jiae.mag.oh@gmail.com",
+    "linkedin": "",
+    "cta": "Open to Product Designer roles in the UK. The fastest way to reach me is email."
+  },
+  "seo": {
+    "title": "Jiae Oh — Product Designer, Manchester",
+    "description": "Product designer working in fintech, enterprise data and B2B operational software. Case studies on onboarding conversion, hospitality operations and AI-assisted design systems.",
+    "ogImage": "/images/og-cover.png"
+  },
+  "workOrder": [
+    "open-till-close",
+    "enterprise-dashboards",
+    "crypto-exchange",
+    "contact-centre-dashboard",
+    "scam-protection",
+    "money-skills-kids"
+  ],
+  "selectedWork": {
+    "heading": "Selected work",
+    "note": "Shorter engagements, included for range rather than depth.",
+    "items": [
+      {
+        "title": "Marin Consulting — Paper to digital manufacturing records",
+        "meta": "Product Designer · Chester, UK · Jul–Aug 2025",
+        "body": "Digitised a paper-based manufacturing records system as sole designer, researching through paper-form analysis and developer field reports under security-restricted site access. I mirrored the existing paper conventions in the UI, down to form colour coding, so engineers needed almost no retraining.",
+        "image": "/images/selected/marin-01.png"
+      },
+      {
+        "title": "Kia Motors — New-car delivery onboarding",
+        "meta": "UI / Motion Graphic Designer · Remote · Nov–Dec 2025",
+        "body": "Designed screen-guided walkthroughs that new owners follow inside their vehicle at handover, plus a looping motion intro. Worked within Kia's design system and agency-led review cycles; shipped and in use.",
+        "image": "/images/selected/kia-01.png"
+      }
+    ]
+  },
+  "cardSchema": {
+    "note": "Cards render from frontmatter only. Body markdown is the detail page. Read STRATEGY.md before making layout decisions.",
+    "header": "{category} • {platform} • {year}",
+    "cardFields": [
+      "title",
+      "description",
+      "badge",
+      "gallery (1 large + 2 small)",
+      "roleTitle",
+      "timeline",
+      "keyChallenges (2)",
+      "outcomes (2)",
+      "tags (4)"
+    ],
+    "columns": [
+      "Role & Timeline",
+      "Key Challenges",
+      "Outcomes"
+    ],
+    "linkAffordance": "arrow, top-right, links to /work/{slug}",
+    "badgeStyles": {
+      "Shipped": "neutral",
+      "Pre-launch": "accent",
+      "Concept": "outline",
+      "In progress": "outline-muted"
+    },
+    "detailSections": [
+      "Overview",
+      "Process",
+      "What this transfers to"
+    ],
+    "rules": [
+      "keyChallenges and outcomes are exactly 2 items each",
+      "outcomes lead with the number or the concrete result",
+      "tags are exactly 4",
+      "cards with an empty gallery render header + columns only"
+    ],
+    "fileNaming": "content/projects/case-NN_{slug}.md — the NN prefix is authoring order only. Routes and image folders use `slug` from the frontmatter, never the filename.",
+    "clientRendering": "`client` renders ONLY inside the case study detail page (in the Role & Timeline block or an overview table). Never on the card, never in the top navigation.",
+    "navRendering": "Top navigation pill per case study: {category} — {navLabel}. Use navLabel, not title."
+  }
+}
