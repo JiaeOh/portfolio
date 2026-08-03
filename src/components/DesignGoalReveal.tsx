@@ -37,11 +37,13 @@ export function DesignGoalReveal() {
   });
 
   const bodyText = [
+    site.designGoal.heading,
     site.designGoal.leadBold,
     site.designGoal.leadFaded,
     site.designGoal.closingFaded,
   ].join(" ");
   const words = bodyText.split(" ");
+  const headingWordCount = site.designGoal.heading.split(" ").length;
 
   return (
     <div ref={containerRef} className="relative h-[300vh] w-full">
@@ -49,15 +51,26 @@ export function DesignGoalReveal() {
         <p className="w-full max-w-[800px] font-main text-[24px] font-bold tracking-[-0.48px] text-[color:var(--color-orange-text)]">
           {site.designGoal.label}
         </p>
-        <p className="w-full max-w-[800px] font-goal text-[32px] font-bold tracking-[-0.32px] text-[color:var(--color-text-primary)]">
-          {site.designGoal.heading}
-        </p>
-        <p className="w-full max-w-[800px] font-goal text-[24px] font-medium tracking-[-0.48px]">
-          {words.map((word, i) => (
+        <p className="w-full max-w-[800px] font-goal text-[32px] font-bold tracking-[-0.32px]">
+          {words.slice(0, headingWordCount).map((word, i) => (
             <RevealWord
               key={i}
               progress={scrollYProgress}
               range={[i / words.length, (i + 1) / words.length]}
+            >
+              {word}
+            </RevealWord>
+          ))}
+        </p>
+        <p className="w-full max-w-[800px] font-goal text-[24px] font-medium tracking-[-0.48px]">
+          {words.slice(headingWordCount).map((word, i) => (
+            <RevealWord
+              key={i}
+              progress={scrollYProgress}
+              range={[
+                (headingWordCount + i) / words.length,
+                (headingWordCount + i + 1) / words.length,
+              ]}
             >
               {word}
             </RevealWord>

@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Hero } from "../components/Hero";
 import { ProjectCard } from "../components/ProjectCard";
 import { Media } from "../components/Media";
+import { SectionHeading } from "../components/SectionHeading";
 import { projects, site } from "../lib/content";
 
 const publishedProjects = projects.filter((p) => p.badge !== "In progress");
@@ -71,23 +72,21 @@ export function HomePage() {
         id="work"
         className="flex w-full flex-col items-center gap-16 px-20 pb-24 max-lg:px-6"
       >
-        <h2 className="w-[1080px] max-w-full font-main text-2xl font-semibold text-[color:var(--color-orange)]">
-          {site.workSectionHeading}
-        </h2>
+        <div className="w-[1080px] max-w-full">
+          <SectionHeading title={site.workSectionHeading} />
+        </div>
         {publishedProjects.map((project) => (
           <ProjectCard key={project.slug} project={project} />
         ))}
       </div>
 
       {comingSoonProjects.length > 0 && (
-        <div className="mx-auto flex w-full flex-col items-center gap-6 px-20 pb-24 max-lg:px-6">
-          <div>
-            <h2 className="font-main text-2xl font-semibold text-[color:var(--color-orange)]">
-              Coming Soon
-            </h2>
-            <p className="mt-1 font-main text-sm text-[#4a5463]">
-              Self-initiated project I'm working on next
-            </p>
+        <div className="mx-auto flex w-full flex-col items-start gap-6 px-20 pb-24 max-lg:px-6">
+          <div className="w-[1080px] max-w-full">
+            <SectionHeading
+              title="Coming Soon"
+              subtitle="Self-initiated project I'm working on next"
+            />
           </div>
           <div className="flex gap-6 max-lg:flex-col">
             {comingSoonProjects.map((project) => (

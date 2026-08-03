@@ -49,7 +49,7 @@ export function Hero() {
         />
       )}
 
-      <div className="flex flex-col items-start gap-3">
+      <div className="flex flex-col items-start gap-6">
         <h1 className="font-display text-[96px] font-bold leading-none text-[color:var(--color-text-primary)] max-lg:text-[56px]">
           {name.charAt(0)}
           <span ref={iRef}>{name.charAt(1)}</span>
@@ -62,10 +62,6 @@ export function Hero() {
           </span>
         </p>
       </div>
-
-      <p className="max-w-[720px] font-main text-[32px] font-semibold leading-[1.4] text-[color:var(--color-text-primary)] max-lg:text-[24px]">
-        {site.tagline}
-      </p>
 
       <p className="max-w-[640px] font-main text-[16px] leading-[1.7] text-[#4a5463]">
         {site.intro}{" "}

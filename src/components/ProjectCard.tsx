@@ -67,7 +67,10 @@ export function ProjectCard({ project }: { project: Project }) {
           </p>
           <ul className="pt-2 space-y-1.5">
             {project.keyChallenges.map((item) => (
-              <li key={item} className="font-main text-[17px] text-[#4a5463]">
+              <li
+                key={item}
+                className="font-main text-[16px] leading-snug text-[#4a5463]"
+              >
                 • {item}
               </li>
             ))}
@@ -79,13 +82,13 @@ export function ProjectCard({ project }: { project: Project }) {
           <p className="font-main text-sm text-[color:var(--color-blue)]">
             Outcomes
           </p>
-          <ul className="pt-2 space-y-2">
+          <ul className="pt-2 space-y-1.5">
             {project.outcomes.map((item) => (
               <li
                 key={item}
-                className="font-main text-[17px] leading-snug font-semibold text-[color:var(--color-text-primary)]"
+                className="font-main text-[16px] leading-snug font-semibold text-[color:var(--color-text-primary)]"
               >
-                {item}
+                • {item}
               </li>
             ))}
           </ul>

@@ -5,7 +5,7 @@ platform: "Desktop Web"
 navLabel: "Customer Centre Dashboard"
 year: "2026"
 title: "AI enhanced Customer Centre Dashboard"
-description: "AI can summarise a call in a second. \ub2e4\uc74c \uc5c5\ubb34 \uc561\uc158\uc744 \uc608\uc0c1\ud558\uace0 \ud574\ub2f9 \ud398\uc774\uc9c0\ub97c \ubc14\ub85c \uc5f0\uacb0\ud574 \uc6cc\ud06c\ud50c\ub85c\uc6b0\uc758 \ud6a8\uc728\uc131\uc744 \ub192\uc785\ub2c8\ub2e4. A self-initiated concept."
+description: "AI can summarise a call in a second. It anticipates the advisor's next action and links straight to the relevant page, improving workflow efficiency. A self-initiated concept."
 badge: "Concept"
 client: "Self-initiated concept"
 featured: true

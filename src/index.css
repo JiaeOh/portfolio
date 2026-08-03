@@ -59,10 +59,14 @@
 
   --color-text-primary: #000000;
   --color-orange: #ff6d2e;
-  /* Darker variant for text-on-light-background use — #ff6d2e as text
-     fails WCAG AA (2.81:1); this passes at ~4.8:1. Background/fill uses
-     (badges, the nav progress bar) keep the brighter --color-orange. */
-  --color-orange-text: #c14f16;
+  /* Vivid variant for text-on-light-background use. #ff6d2e itself fails
+     WCAG AA as text (2.81:1). This passes the large-text AA threshold
+     (3:1) against the site's off-white background — only use it at
+     large/bold sizes (section names, 24px+). For anything smaller,
+     use --color-text-primary instead of dulling the orange further.
+     Background/fill uses (badges, the nav progress bar) keep the
+     brighter --color-orange. */
+  --color-orange-text: #e6641e;
   --color-blue: #1f75ff;
   --color-blue-15: rgba(31, 117, 255, 0.15);
   --color-pronoun-blue: #0a5fe9;

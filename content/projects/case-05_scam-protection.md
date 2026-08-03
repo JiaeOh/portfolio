@@ -5,7 +5,7 @@ platform: "Mobile Banking"
 navLabel: "Scam Protection"
 year: "2026"
 title: "Scam detection & Prevent UX for banking app"
-description: "MZ부터 시니어까지 모든 세대에게 위협이 되고있는 스캠 방지를 위해, 어느 단계에서 과하지 않게 UX가 개입하고, 자연스럽게 사용자가 스스로 의심을 시작할 수 있도록 UX를 고민해 페이지를 디자인해보았습니다."
+description: "Scams threaten every generation, from Gen Z to seniors. This concept explores where UX can intervene without overreach, so users start questioning a situation on their own rather than being told to."
 badge: "In progress"
 client: "Self-initiated concept"
 featured: false
