@@ -1,6 +1,6 @@
 ---
 slug: open-till-close
-category: "Hospitality"
+category: "B2B Operations"
 platform: "Mobile App"
 navLabel: "Hospitality Operations App"
 year: "2026"
@@ -21,9 +21,9 @@ keyChallenges:
   - "Records written from memory after the shift, not during it"
   - "Logs must hold up as evidence in a food safety inspection"
 outcomes:
-  - "~50% reduction in record-keeping time in initial testing"
+  - "50% reduction in record-keeping time in initial testing"
   - "Every entry timestamped and attributable at the moment of the task"
-tags: [Field Research, Design System, Accessibility, AI-Assisted Build]
+tags: [Field Research, "Design System for Human and AI", Accessibility, AI-Assisted Build]
 ---
 
 ## Overview

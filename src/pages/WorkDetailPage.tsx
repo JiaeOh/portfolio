@@ -46,7 +46,7 @@ export function WorkDetailPage() {
         <Badge badge={project.badge} />
       </div>
 
-      <p className="mt-4 max-w-[680px] font-main text-lg leading-[1.6] text-[#4a5565]">
+      <p className="mt-4 max-w-[680px] font-main text-lg leading-[1.6] text-[#4a5463]">
         {project.description}
       </p>
 
@@ -58,7 +58,7 @@ export function WorkDetailPage() {
           <p className="pt-2 font-main text-base text-black">
             {project.roleTitle}
           </p>
-          <p className="pt-1 font-main text-sm text-[#4a5565]">
+          <p className="pt-1 font-main text-sm text-[#4a5463]">
             {project.timeline}
           </p>
         </div>

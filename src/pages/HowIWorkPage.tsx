@@ -17,7 +17,7 @@ export function HowIWorkPage() {
         {page.title}
       </h1>
       {page.subtitle && (
-        <p className="mt-3 max-w-[640px] font-main text-lg leading-[1.6] text-[#4a5565]">
+        <p className="mt-3 max-w-[640px] font-main text-lg leading-[1.6] text-[#4a5463]">
           {page.subtitle}
         </p>
       )}

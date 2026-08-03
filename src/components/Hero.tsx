@@ -18,9 +18,9 @@ export function Hero() {
         <h1 className="font-display text-[96px] font-semibold leading-none text-[color:var(--color-text-primary)] max-lg:text-[56px]">
           {site.name}
         </h1>
-        <p className="font-accent text-[20px] tracking-[-0.4px] text-gray-600">
+        <p className="font-main text-[20px] tracking-[-0.4px] text-[#4a5463]">
           Pronounced as{" "}
-          <span className="text-[color:var(--color-orange-text)]">
+          <span className="text-[color:var(--color-pronoun-blue)]">
             {site.pronunciation}
           </span>
         </p>
@@ -33,9 +33,26 @@ export function Hero() {
         {site.tagline}
       </p>
 
-      <p className="max-w-[640px] font-main text-[18px] leading-[1.7] text-[#4a5565]">
-        {site.intro}
+      <p className="max-w-[640px] font-main text-[16px] leading-[1.7] text-[#4a5463]">
+        {site.intro}{" "}
+        <span className="font-bold">{site.introHighlight}</span>
       </p>
+
+      <div className="flex w-full max-w-[800px] flex-col items-center gap-6 py-[120px] max-lg:py-16">
+        <p className="w-full font-main text-[24px] font-bold tracking-[-0.48px] text-[color:var(--color-orange-text)]">
+          {site.designGoal.label}
+        </p>
+        <p className="w-full font-goal text-[32px] font-bold tracking-[-0.32px] text-[color:var(--color-text-primary)]">
+          {site.designGoal.heading}
+        </p>
+        <p className="w-full font-goal text-[24px] font-medium tracking-[-0.48px] text-[color:var(--color-text-primary)]">
+          {site.designGoal.leadBold}{" "}
+          <span className="text-black/20">{site.designGoal.leadFaded}</span>
+        </p>
+        <p className="w-full font-goal text-[24px] font-medium tracking-[-0.48px] text-black/20">
+          {site.designGoal.closingFaded}
+        </p>
+      </div>
     </div>
   );
 }

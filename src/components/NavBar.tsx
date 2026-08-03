@@ -6,7 +6,7 @@ import {
   type MouseEvent,
 } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import homeIcon from "../assets/icons/home-icon.svg";
+import homeIcon from "../assets/icons/nav-home-icon.svg";
 import { MarqueeText } from "./MarqueeText";
 import { getProjectBySlug } from "../lib/content";
 
@@ -136,9 +136,9 @@ export function NavBar() {
         type="button"
         onClick={goHome}
         aria-label="Home"
-        className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-white/15 bg-black/35 backdrop-blur-xl shadow-[inset_0_1px_0_0_rgba(255,255,255,0.15),0px_4px_16px_0px_rgba(0,0,0,0.1)]"
+        className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[rgba(185,185,185,0.1)] backdrop-blur-xl"
       >
-        <img src={homeIcon} alt="" className="size-5" />
+        <img src={homeIcon} alt="" className="size-12" />
       </button>
 
       <div className="relative h-12 w-[260px] lg:w-[440px]">
@@ -153,23 +153,14 @@ export function NavBar() {
           onMouseMove={(e) => setHoverFraction(fractionFromEvent(e))}
           onMouseLeave={() => setHoverFraction(null)}
           onClick={(e) => seekTo(fractionFromEvent(e))}
-          className="relative h-12 w-full cursor-pointer overflow-hidden rounded-full border border-white/15 bg-black/35 backdrop-blur-xl shadow-[inset_0_1px_0_0_rgba(255,255,255,0.15),0px_4px_16px_0px_rgba(0,0,0,0.1)]"
+          className="relative h-12 w-full cursor-pointer overflow-hidden rounded-full bg-[rgba(185,185,185,0.1)] backdrop-blur-xl"
         >
           <div
-            className="absolute inset-y-0 left-0 border-r border-white/20 bg-[color:var(--color-orange)]/90 backdrop-blur-sm shadow-[inset_0_1px_0_0_rgba(255,255,255,0.35)]"
+            className="absolute inset-y-0 left-0 bg-[rgba(255,255,255,0.7)]"
             style={{ width: `${fillPercent}%` }}
           />
 
-          <div
-            className="absolute inset-0"
-            style={{ clipPath: `inset(0 0 0 ${fillPercent}%)` }}
-          >
-            <MarqueeText text={activeLabel} className="text-white" />
-          </div>
-          <div
-            className="absolute inset-0"
-            style={{ clipPath: `inset(0 ${100 - fillPercent}% 0 0)` }}
-          >
+          <div className="absolute inset-0">
             <MarqueeText text={activeLabel} className="text-black" />
           </div>
         </div>

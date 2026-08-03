@@ -8,7 +8,7 @@ export function ProjectCard({ project }: { project: Project }) {
     <div
       data-nav-section
       data-nav-label={`${project.category} — ${project.navLabel}`}
-      className="w-[1080px] max-w-full rounded-3xl border border-gray-200/70 bg-white/60 p-8 max-lg:p-6"
+      className="w-[1080px] max-w-full rounded-3xl border border-[rgba(229,229,232,0.7)] bg-white/60 p-8 shadow-[0px_7px_24px_4px_rgba(0,0,0,0.03)] max-lg:p-6"
     >
       <div className="flex items-start justify-between gap-4">
         <p className="font-main text-sm text-gray-600">
@@ -38,7 +38,7 @@ export function ProjectCard({ project }: { project: Project }) {
         <Badge badge={project.badge} />
       </div>
 
-      <p className="mt-3 max-w-[720px] font-main text-base leading-[1.6] text-[#4a5565]">
+      <p className="mt-3 max-w-[720px] font-main text-base leading-[1.6] text-[#4a5463]">
         {project.description}
       </p>
 
@@ -56,7 +56,7 @@ export function ProjectCard({ project }: { project: Project }) {
           <p className="pt-2 font-main text-base text-black">
             {project.roleTitle}
           </p>
-          <p className="pt-1 font-main text-sm text-[#4a5565]">
+          <p className="pt-1 font-main text-[15px] text-[#4a5463]">
             {project.timeline}
           </p>
         </div>
@@ -67,7 +67,7 @@ export function ProjectCard({ project }: { project: Project }) {
           </p>
           <ul className="pt-2 space-y-1.5">
             {project.keyChallenges.map((item) => (
-              <li key={item} className="font-main text-sm text-[#4a5565]">
+              <li key={item} className="font-main text-[17px] text-[#4a5463]">
                 • {item}
               </li>
             ))}
@@ -83,7 +83,7 @@ export function ProjectCard({ project }: { project: Project }) {
             {project.outcomes.map((item) => (
               <li
                 key={item}
-                className="font-main text-lg leading-snug font-semibold text-[color:var(--color-text-primary)]"
+                className="font-main text-[17px] leading-snug font-semibold text-[color:var(--color-text-primary)]"
               >
                 {item}
               </li>
@@ -96,7 +96,7 @@ export function ProjectCard({ project }: { project: Project }) {
         {project.tags.map((tag) => (
           <span
             key={tag}
-            className="rounded-full bg-[color:var(--color-blue-15)] px-3 py-1.5 font-main text-sm text-[#364153]"
+            className="rounded-full bg-[color:var(--color-blue-15)] px-3 py-1.5 font-main text-sm text-[#364054]"
           >
             {tag}
           </span>

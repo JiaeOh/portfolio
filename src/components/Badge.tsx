@@ -2,8 +2,10 @@ import type { Badge as BadgeType } from "../lib/content";
 
 const styles: Record<BadgeType, string> = {
   Shipped: "bg-black text-white",
-  "Pre-launch": "bg-[color:var(--color-orange)] text-black",
-  Concept: "border border-gray-400 text-gray-600",
+  // Figma specifies white text here, but it's 2.15:1 against this
+  // translucent orange — fails WCAG AA badly. Black text (9.75:1) instead.
+  "Pre-launch": "bg-[rgba(247,113,17,0.7)] text-black",
+  Concept: "border border-[#9999a1] text-[#4a5463]",
   "In progress": "border border-gray-300 text-gray-600",
 };
 

@@ -4,7 +4,16 @@
   "role": "Product Designer",
   "location": "Manchester, UK",
   "tagline": "I find problems before being asked, and carry them through to shipped, measured results.",
-  "intro": "Product Designer working across fintech, enterprise data and B2B products. I design from evidence rather than opinion, and I build hands-on — currently designing and shipping a hospitality operations app end to end.",
+  "intro": "Product Designer working across fintech, enterprise data and B2B products. I design from evidence rather than opinion, and I delivered with measured results.",
+  "introHighlight": "— currently designing and shipping a hospitality operations app end to end.",
+  "designGoal": {
+    "label": "Design goal",
+    "heading": "We live in a time when AI is accelerating everything. Yet Trust has never been harder to build.",
+    "leadBold": "As an early adopter and product designer, I don't want technology's benefits reserved for the few who move fastest. I design inclusively, so that vulnerable and hesitant users, not just the digitally confident,",
+    "leadFaded": "get AI as both stabilisers and wings.",
+    "closingFaded": "When people are enhanced by technology rather than led by it, work gets lighter, teams focus on what matters, and customers get services that truly fit them. That's the era I want to help build."
+  },
+  "workSectionHeading": "Selected Works",
   "nav": [
     {
       "label": "Work",
@@ -70,7 +79,7 @@
   ],
   "contact": {
     "email": "jiae.mag.oh@gmail.com",
-    "linkedin": "",
+    "linkedin": "https://www.linkedin.com/in/jiae-oh",
     "cta": "Open to Product Designer roles in the UK. The fastest way to reach me is email."
   },
   "seo": {

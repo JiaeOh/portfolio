@@ -1,11 +1,11 @@
 ---
 slug: contact-centre-dashboard
-category: "AI Experience"
+category: "AI Enhanced workflow"
 platform: "Desktop Web"
-navLabel: "Contact Centre Dashboard"
+navLabel: "Customer Centre Dashboard"
 year: "2026"
-title: "Advisor Assist \u2014 Contact Centre Dashboard"
-description: "AI can summarise a call in a second. The design problem is whether the advisor can defend what they act on. A self-initiated concept."
+title: "AI enhanced Customer Centre Dashboard"
+description: "AI can summarise a call in a second. \ub2e4\uc74c \uc5c5\ubb34 \uc561\uc158\uc744 \uc608\uc0c1\ud558\uace0 \ud574\ub2f9 \ud398\uc774\uc9c0\ub97c \ubc14\ub85c \uc5f0\uacb0\ud574 \uc6cc\ud06c\ud50c\ub85c\uc6b0\uc758 \ud6a8\uc728\uc131\uc744 \ub192\uc785\ub2c8\ub2e4. A self-initiated concept."
 badge: "Concept"
 client: "Self-initiated concept"
 featured: true
@@ -16,14 +16,14 @@ gallery:
   - { src: "/images/contact-centre-dashboard/02-states.png", alt: "Confirmed versus unconfirmed content states", size: "small" }
   - { src: "/images/contact-centre-dashboard/03-correction.png", alt: "Correction record showing where a human overrode a suggestion", size: "small" }
 roleTitle: "Product Designer"
-timeline: "Self-initiated \u2022 Solo"
+timeline: "14 months \u2022 Self-initiated / Solo"
 keyChallenges:
   - "AI summaries look finished before they are correct, so they go unchallenged"
   - "Advisors are accountable for actions they cannot trace back to a source"
 outcomes:
   - "Every generated line carries source, uncertainty and correction history"
   - "Uncertainty shown as behaviour \u2014 unconfirmed fields cannot pre-fill an action"
-tags: [AI Interfaces, Explainability, Contact Centre, Concept]
+tags: [AI Interfaces, Explainability, Customer Centre, Concept]
 ---
 
 ## Overview

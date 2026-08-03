@@ -1,7 +1,7 @@
 ---
 slug: crypto-exchange
 category: "Fintech"
-platform: "Web Platform"
+platform: "Web App Platform"
 navLabel: "Cryptocurrency Trading Web App"
 year: "2024"
 title: "Cryptocurrency Trading Web App Platform"
@@ -16,7 +16,7 @@ gallery:
   - { src: "/images/crypto-exchange/07-futures-dark.jpg", alt: "Futures trading screen, dark mode", size: "small" }
   - { src: "/images/crypto-exchange/06-community.jpg", alt: "Community feed beside the trading chart", size: "small" }
 roleTitle: "Product Designer"
-timeline: "14 months • Designer, later +1 Junior Designer, PM, Engineering"
+timeline: "14 months • Junior Designer, PM, 8 Developers"
 keyChallenges:
   - "No reason for users to leave exchanges they already trusted"
   - "Too few users to research at scale, pre-launch"
