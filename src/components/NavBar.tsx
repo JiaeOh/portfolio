@@ -34,6 +34,23 @@ export function NavBar() {
   const [scrollFraction, setScrollFraction] = useState(0);
   const [hoverFraction, setHoverFraction] = useState<number | null>(null);
   const [sections, setSections] = useState<Section[]>([]);
+  const [isTouch, setIsTouch] = useState(false);
+
+  useEffect(() => {
+    const query = window.matchMedia("(hover: none)");
+    const update = () => setIsTouch(query.matches);
+    update();
+    query.addEventListener("change", update);
+    return () => query.removeEventListener("change", update);
+  }, []);
+
+  // Touch devices fire a synthetic mousemove on tap but never mouseleave, so
+  // the preview tooltip would otherwise stay stuck open — dismiss it ourselves.
+  useEffect(() => {
+    if (!isTouch || hoverFraction == null) return;
+    const timer = setTimeout(() => setHoverFraction(null), 1200);
+    return () => clearTimeout(timer);
+  }, [isTouch, hoverFraction]);
 
   const computeSections = useCallback(() => {
     const els = Array.from(
