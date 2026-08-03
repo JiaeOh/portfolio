@@ -9,21 +9,20 @@ import { CVPage } from "./pages/CVPage";
 function App() {
   return (
     <BrowserRouter>
-      <div
-        className="min-h-screen w-full bg-[#f6f6f6] bg-no-repeat"
-        style={{
-          backgroundImage:
-            "conic-gradient(from 200deg at 15% 12%, rgba(255,255,255,0.51) 0%, rgba(238,243,250,0.2) 4.37%, rgba(111,169,255,0.3) 12.02%, rgba(206,225,252,0.2) 22.6%, rgba(249,249,249,0.2) 45.24%, rgba(255,255,255,0.51) 100%)",
-        }}
-      >
+      <div className="min-h-screen w-full bg-[#f6f6f6]">
         <NavBar />
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/work/:slug" element={<WorkDetailPage />} />
-          <Route path="/how-i-work" element={<HowIWorkPage />} />
-          <Route path="/about" element={<AboutPage />} />
-          <Route path="/cv" element={<CVPage />} />
-        </Routes>
+        {/* The whole design canvas is 1440 wide with 80px side padding baked
+            into each page — this centers that canvas instead of letting it
+            hug the left edge on wider screens. */}
+        <div className="mx-auto max-w-[1440px]">
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/work/:slug" element={<WorkDetailPage />} />
+            <Route path="/how-i-work" element={<HowIWorkPage />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/cv" element={<CVPage />} />
+          </Routes>
+        </div>
       </div>
     </BrowserRouter>
   );

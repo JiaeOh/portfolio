@@ -69,9 +69,9 @@ export function HomePage() {
 
       <div
         id="work"
-        className="flex w-[1280px] max-w-full flex-col items-center gap-16 px-6 pb-24"
+        className="flex w-full flex-col items-center gap-16 px-20 pb-24 max-lg:px-6"
       >
-        <h2 className="w-full max-w-[1200px] font-main text-2xl font-semibold text-[color:var(--color-orange)]">
+        <h2 className="w-[1080px] max-w-full font-main text-2xl font-semibold text-[color:var(--color-orange)]">
           {site.workSectionHeading}
         </h2>
         {publishedProjects.map((project) => (
@@ -80,7 +80,7 @@ export function HomePage() {
       </div>
 
       {comingSoonProjects.length > 0 && (
-        <div className="mx-auto flex w-[1280px] max-w-full flex-col gap-6 px-6 pb-24">
+        <div className="mx-auto flex w-full flex-col items-center gap-6 px-20 pb-24 max-lg:px-6">
           <div>
             <h2 className="font-main text-2xl font-semibold text-[color:var(--color-orange)]">
               Coming Soon
@@ -121,7 +121,7 @@ export function HomePage() {
         id="about"
         data-nav-section
         data-nav-label="About"
-        className="mx-auto flex w-[1280px] max-w-full flex-col gap-6 border-t border-[#e5e5e8] px-6 py-16"
+        className="mx-auto flex w-full flex-col gap-6 border-t border-[#e5e5e8] px-20 py-16 max-lg:px-6"
       >
         <h2 className="font-main text-2xl font-semibold text-[color:var(--color-text-primary)]">
           {site.about.heading}
