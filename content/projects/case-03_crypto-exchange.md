@@ -11,6 +11,7 @@ client: "Custom Connect — cryptocurrency exchange startup"
 featured: true
 order: 3
 cover: "/images/crypto-exchange/00-cover.png"
+video: "/images/crypto-exchange/00-product-video.mp4"
 gallery:
   - { src: "/images/crypto-exchange/00-hero.mp4", poster: "/images/crypto-exchange/00-hero-poster.jpg", alt: "Walkthrough of the Lazex platform", size: "large" }
   - { src: "/images/crypto-exchange/07-futures-dark.jpg", alt: "Futures trading screen, dark mode", size: "small" }

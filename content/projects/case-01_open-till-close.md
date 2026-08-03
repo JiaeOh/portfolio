@@ -11,6 +11,7 @@ client: "Own product — designed and built with one developer"
 featured: true
 order: 1
 cover: "/images/open-till-close/00-cover.png"
+video: "/images/open-till-close/00-product-video.mp4"
 gallery:
   - { src: "/images/open-till-close/01-app-screens.png", alt: "Task checklist and temperature entry screens", size: "large" }
   - { src: "/images/open-till-close/02-field-research.png", alt: "Field research notes mapping when tasks are done versus recorded", size: "small" }

@@ -11,6 +11,7 @@ client: "Self-initiated concept"
 featured: true
 order: 4
 cover: "/images/contact-centre-dashboard/00-cover.png"
+video: "/images/contact-centre-dashboard/00-product-video.mp4"
 gallery:
   - { src: "/images/contact-centre-dashboard/01-summary-panel.png", alt: "Summary panel with source links and unconfirmed states", size: "large" }
   - { src: "/images/contact-centre-dashboard/02-states.png", alt: "Confirmed versus unconfirmed content states", size: "small" }

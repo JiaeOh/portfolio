@@ -35,6 +35,7 @@ export type Project = {
   featured: boolean;
   order: number;
   cover: string;
+  video?: string;
   gallery: GalleryItem[];
   roleTitle: string;
   timeline: string;

@@ -11,6 +11,7 @@ client: "Harim Holdings — major food & agriculture conglomerate"
 featured: true
 order: 2
 cover: "/images/enterprise-dashboards/00-cover.png"
+video: "/images/enterprise-dashboards/00-product-video.mp4"
 gallery:
   - { src: "/images/enterprise-dashboards/01-dashboard.png", alt: "Consolidated group dashboard with subsidiary performance", size: "large" }
   - { src: "/images/enterprise-dashboards/02-access-model.png", alt: "Role-based access model by department, seniority and subsidiary", size: "small" }

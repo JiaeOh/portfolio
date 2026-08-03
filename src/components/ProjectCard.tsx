@@ -1,24 +1,48 @@
+import { useRef, useState, type MouseEvent } from "react";
 import { Link } from "react-router-dom";
 import type { Project } from "../lib/content";
 import { Badge } from "./Badge";
 import { ProjectGallery } from "./ProjectGallery";
 
 export function ProjectCard({ project }: { project: Project }) {
+  const cardRef = useRef<HTMLAnchorElement>(null);
+  const [cursor, setCursor] = useState<{ x: number; y: number } | null>(null);
+
+  const handleMouseMove = (e: MouseEvent<HTMLAnchorElement>) => {
+    const rect = cardRef.current?.getBoundingClientRect();
+    if (!rect) return;
+    setCursor({ x: e.clientX - rect.left, y: e.clientY - rect.top });
+  };
+
   return (
-    <div
+    <Link
+      ref={cardRef}
+      to={`/work/${project.slug}`}
+      aria-label={`Read the full ${project.title} case study`}
       data-nav-section
       data-nav-label={`${project.category} — ${project.navLabel}`}
-      className="w-[1080px] max-w-full rounded-3xl border border-[rgba(229,229,232,0.7)] bg-white/60 p-8 shadow-[0px_7px_24px_4px_rgba(0,0,0,0.03)] transition-[translate,box-shadow] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-1 hover:shadow-[0px_28px_56px_-12px_rgba(0,0,0,0.14)] max-lg:p-6"
+      onMouseMove={handleMouseMove}
+      onMouseLeave={() => setCursor(null)}
+      className="relative block w-[1080px] max-w-full rounded-3xl border border-[rgba(229,229,232,0.7)] bg-white/60 p-8 shadow-[0px_7px_24px_4px_rgba(0,0,0,0.03)] transition-[translate,box-shadow] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-1 hover:shadow-[0px_28px_56px_-12px_rgba(0,0,0,0.14)] max-lg:p-6"
     >
+      {cursor && (
+        <div
+          className="pointer-events-none absolute z-10 rounded-full bg-black px-4 py-2 font-main text-sm whitespace-nowrap text-white max-lg:hidden"
+          style={{
+            left: cursor.x + 18,
+            top: cursor.y,
+            transform: "translateY(-50%)",
+          }}
+        >
+          Read {project.title}
+        </div>
+      )}
+
       <div className="flex items-start justify-between gap-4">
         <p className="font-main text-sm text-gray-600">
           {project.category} • {project.platform} • {project.year}
         </p>
-        <Link
-          to={`/work/${project.slug}`}
-          aria-label={`Read the full ${project.title} case study`}
-          className="shrink-0 text-gray-600 transition-colors hover:text-black"
-        >
+        <span className="shrink-0 text-gray-600">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
             <path
               d="M7 17L17 7M17 7H9M17 7V15"
@@ -28,7 +52,7 @@ export function ProjectCard({ project }: { project: Project }) {
               strokeLinejoin="round"
             />
           </svg>
-        </Link>
+        </span>
       </div>
 
       <div className="mt-3 flex flex-wrap items-center gap-3">
@@ -105,6 +129,6 @@ export function ProjectCard({ project }: { project: Project }) {
           </span>
         ))}
       </div>
-    </div>
+    </Link>
   );
 }
