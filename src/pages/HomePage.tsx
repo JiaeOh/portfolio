@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Hero } from "../components/Hero";
 import { ProjectCard } from "../components/ProjectCard";
-import { Media } from "../components/Media";
+import { ComingSoonCarousel } from "../components/ComingSoonCarousel";
 import { SectionHeading } from "../components/SectionHeading";
 import { projects, site } from "../lib/content";
 
@@ -90,31 +90,7 @@ export function HomePage() {
               subtitle="Self-initiated project I'm working on next"
             />
           </div>
-          <div className="flex w-[1080px] max-w-full gap-10 max-lg:flex-col">
-            {comingSoonProjects.map((project) => (
-              <div
-                key={project.slug}
-                className="flex flex-1 items-start gap-6"
-              >
-                <div className="flex flex-1 flex-col gap-2 self-start">
-                  <p className="font-main text-sm text-[#4a5463]">
-                    In development
-                  </p>
-                  <p className="font-main text-lg font-semibold text-[color:var(--color-text-primary)]">
-                    {project.title}
-                  </p>
-                  <p className="font-main text-base leading-[1.6] text-[#4a5463]">
-                    {project.description}
-                  </p>
-                </div>
-                <Media
-                  src={project.cover}
-                  alt={project.title}
-                  className="h-[280px] flex-1 shrink-0 self-start rounded-2xl max-lg:h-[220px]"
-                />
-              </div>
-            ))}
-          </div>
+          <ComingSoonCarousel projects={comingSoonProjects} />
         </div>
       )}
 

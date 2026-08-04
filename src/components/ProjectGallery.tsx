@@ -70,6 +70,7 @@ export function ProjectGallery({ gallery }: { gallery: GalleryItem[] }) {
           >
             <Media
               src={item.src}
+              fallbackSrc={item.poster}
               alt={item.alt}
               poster={item.poster}
               pausedUntilHover={i !== 0}

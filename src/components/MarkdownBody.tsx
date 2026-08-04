@@ -28,6 +28,11 @@ const baseComponents: Components = {
       {children}
     </strong>
   ),
+  code: ({ children }) => (
+    <code className="rounded bg-[#f1f2f4] px-1.5 py-0.5 font-mono text-[0.9em] text-[#374151]">
+      {children}
+    </code>
+  ),
   ul: ({ children }) => (
     <ul className="mt-4 list-disc space-y-1.5 pl-5 font-main text-base leading-[1.7] text-[#374151]">
       {children}

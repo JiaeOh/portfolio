@@ -5,14 +5,14 @@ import { Media } from "../components/Media";
 import { MarkdownBody } from "../components/MarkdownBody";
 
 /**
- * Pulls the numbered "### 1. ..." step titles out of the "## Process"
- * section to use as a scannable Action list. These are the project's own
- * words — just reused as a summary instead of duplicated by hand.
+ * Pulls the "### ..." step titles out of the "## Process" section to use
+ * as a scannable Action list. These are the project's own words — just
+ * reused as a summary instead of duplicated by hand.
  */
 function extractProcessSteps(body: string): string[] {
   const sectionMatch = body.match(/\n## Process\n([\s\S]*?)(?=\n## |$)/);
   const section = sectionMatch ? sectionMatch[1] : "";
-  return [...section.matchAll(/^### \d+\.\s*(.+)$/gm)].map((m) => m[1]);
+  return [...section.matchAll(/^### (?:\d+\.\s*)?(.+)$/gm)].map((m) => m[1]);
 }
 
 /** Splits the body so "## Process" can render in its own shaded panel —
@@ -78,7 +78,8 @@ export function WorkDetailPage() {
 
       {/* First viewport: the product in motion, before anything else. */}
       <Media
-        src={project.video ?? project.cover}
+        src={project.video}
+        fallbackSrc={project.cover}
         alt={`${project.title} product walkthrough`}
         className="mt-8 aspect-video w-full rounded-3xl"
       />

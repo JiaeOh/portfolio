@@ -6,7 +6,7 @@ navLabel: "Customer Centre Dashboard"
 year: "2026"
 title: "AI enhanced Customer Centre Dashboard"
 description: "AI can summarise a call in a second. It anticipates the advisor's next action and links straight to the relevant page, improving workflow efficiency. A self-initiated concept."
-badge: "Concept"
+badge: "In progress"
 client: "Self-initiated concept"
 featured: true
 order: 4

@@ -63,11 +63,11 @@ Touch targets and contrast are WCAG-informed as a floor. I deliberately kept som
 
 ![Token architecture and light/dark mode comparison](/images/open-till-close/03-design-system.png "Three-tier tokens, with dark mode variants brightened because the same hue reads dimmer on a dark ground")
 
-### How it was built
+### 5. Build the design system AI could read too
 
 The first working version came out of prompt-driven development with Claude Code, Cursor and Figma MCP.
 
-What mattered was not speed. It was that the design system existed as a written specification a human developer and an AI tool could both read, so generated code came back on-system rather than as scaffolding that needed unpicking.
+What mattered was not speed. It was that the design system existed as a written specification — a `design.md` file — that a human developer and an AI tool could both read. I structured it in three tiers: primitive tokens (raw values), semantic tokens (what they mean — `color-text-primary`, `color-danger`, `space-md`), and components built only from the semantic layer, never straight off primitives. That structure is what let generated code come back on-system whichever tool wrote it, instead of scaffolding that needed unpicking by hand.
 
 What I did not delegate: the research, the reframe, the accessibility trade-offs, and every decision with a legal consequence.
 

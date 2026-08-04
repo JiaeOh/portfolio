@@ -32,33 +32,42 @@ function Placeholder({ className }: { className?: string }) {
 
 /**
  * Renders an image or (for .mp4 sources) a silent autoplay/loop video.
- * Falls back to a neutral placeholder on missing/broken assets instead of
- * breaking the layout — most images in content/ don't exist locally yet.
+ * Falls back to `fallbackSrc` on a broken/missing primary asset (e.g. a
+ * not-yet-recorded product video falling back to the cover image), then
+ * to a neutral placeholder if that fails too, instead of breaking the
+ * layout — most media in content/ don't exist locally yet.
  */
 export function Media({
   src,
+  fallbackSrc,
   alt,
   poster,
   className,
   pausedUntilHover = false,
 }: {
   src?: string;
+  fallbackSrc?: string;
   alt: string;
   poster?: string;
   className?: string;
   pausedUntilHover?: boolean;
 }) {
-  const [failed, setFailed] = useState(false);
+  const [failedSrc, setFailedSrc] = useState<string | null>(null);
   const [hovering, setHovering] = useState(false);
 
-  if (!src || failed) {
+  const usingFallback = !!src && failedSrc === src;
+  const effectiveSrc = usingFallback ? fallbackSrc : src;
+  const failed = !!effectiveSrc && failedSrc === effectiveSrc;
+
+  if (!effectiveSrc || failed) {
     return <Placeholder className={className} />;
   }
 
-  if (isVideo(src)) {
+  if (isVideo(effectiveSrc)) {
     return (
       <video
-        src={src}
+        key={effectiveSrc}
+        src={effectiveSrc}
         poster={poster}
         aria-label={alt}
         autoPlay={!pausedUntilHover}
@@ -72,7 +81,7 @@ export function Media({
           if (hovering) void el.play();
           else el.pause();
         }}
-        onError={() => setFailed(true)}
+        onError={() => setFailedSrc(effectiveSrc)}
         className={`bg-gray-100 object-cover ${className ?? ""}`}
       />
     );
@@ -80,10 +89,11 @@ export function Media({
 
   return (
     <img
-      src={src}
+      key={effectiveSrc}
+      src={effectiveSrc}
       alt={alt}
       loading="lazy"
-      onError={() => setFailed(true)}
+      onError={() => setFailedSrc(effectiveSrc)}
       className={`bg-gray-100 object-cover ${className ?? ""}`}
     />
   );

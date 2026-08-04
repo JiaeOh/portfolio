@@ -17,7 +17,7 @@ gallery:
   - { src: "/images/enterprise-dashboards/02-access-model.png", alt: "Role-based access model by department, seniority and subsidiary", size: "small" }
   - { src: "/images/enterprise-dashboards/03-colour-hierarchy.png", alt: "Colour and saturation mapped to data hierarchy, before and after", size: "small" }
 roleTitle: "UX/UI Designer"
-timeline: "3 months • PM, PO, Heads of each department ? or Stakeholders?"
+timeline: "3 months • PM, PO, department heads"
 keyChallenges:
   - "One dataset, many audiences with different rights by department, seniority and subsidiary"
   - "Live refresh generated enough traffic to degrade the system for everyone"
